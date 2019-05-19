@@ -1,0 +1,19 @@
+spring:
+ datasource:
+  url: jdbc:mysql://${MYSQL_HOST:114.116.6.144}:${MYSQL_PORT:3306}/${DB_NAME:test}?characterEncoding=utf8&serverTimezone=GMT%2B8&allowMultiQueries=true&useUnicode=true&useSSL=false
+  username: ${MYSQL_USER:root}
+  password: ${MYSQL_PASS:root}
+  #Redis配置
+  redis:
+    # 是否开启redis缓存  true开启   false关闭
+    #open: false 好像没有作用
+    # redis数据库索引,默认使用db0
+    database: 1
+    host: ${REDIS_HOST:127.0.0.1}
+    # 连接端口号 默认是6379
+    port: ${REDIS_PORT:6379}
+    # 密码（没有密码为空）
+    password: ${REDIS_PASSWORD:}
+    # 连接超时时间（毫秒）
+    # 数据库连接超时时间，2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位?
+    timeout: 6000

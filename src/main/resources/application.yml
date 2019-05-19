@@ -1,0 +1,57 @@
+#Tomcat配置
+server:
+  port: 80
+  tomcat:
+    session-timeout: 30
+    max-threads: 1000
+    uri-encoding: UTF-8
+  # 项目名称
+  context-path: /hanxiaozhang
+
+#Spring配置
+spring:
+  #环境 dev|pro|test
+  profiles:
+    active: ${ENV:dev}
+
+  #文件上传大小限制-没有用
+  servlet:
+    multipart:
+     max-file-size: 100MB
+     enabled: true
+
+  #mvc模板
+  mvc:
+    #出现错误时, 直接抛出异常(便于异常统一处理，否则捕获不到404)
+    throw-exception-if-no-handler-found: true
+    #系统有默认配置
+    static-path-pattern: /static/**
+    # 指定静态资源的路径
+    resources:
+      static-locations: classpath:/static/
+
+
+  #JPA配置
+  jpa:
+    database: MYSQL
+    #不知道，干什么用的，JPA模式true，true时启动会有警告
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      #     naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: false
+        auto: vlidate
+       #dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+
+
+
+
+
+
+
