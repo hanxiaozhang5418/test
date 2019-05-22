@@ -45,7 +45,7 @@ public class SysUserController {
 
     @RequestMapping(value = "/test")
     public String test1(){
-        return "你好！";
+        return "你好，1111！";
     }
 
 
