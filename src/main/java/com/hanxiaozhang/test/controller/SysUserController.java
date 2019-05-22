@@ -43,5 +43,10 @@ public class SysUserController {
        return sysUserService.findById("1").toString();
     }
 
+    @RequestMapping(value = "/test")
+    public String test1(){
+        return "你好！";
+    }
+
 
 }
